@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/page_transition_animation.dart';
-import 'package:flutter_animations/physics_simulation.dart';
+
+import 'animated_container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Animations',
-      home: PhysicsSimulationView(),
+      home: AnimatedContainerAppView(),
     );
   }
 }
