@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'animated_container.dart';
+import 'animated_opacity.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Animations',
-      home: AnimatedContainerAppView(),
+      home: AnimatedOpacityView(),
     );
   }
 }
