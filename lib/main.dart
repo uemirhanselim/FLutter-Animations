@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'animated_opacity.dart';
+import 'animations/animated_opacity.dart';
 
 void main() {
   runApp(const MyApp());
