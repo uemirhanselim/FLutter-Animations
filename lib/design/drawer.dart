@@ -10,19 +10,15 @@ class DrawerViewState extends State<DrawerView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Drawer Turorial"),
-      ),
-      body: const Center(
-        child: Text("This is the center"),
-      ),
+      appBar: AppBar(title: const Text("Drawer Tutorial")),
+      body: const Center(child: Text("This is the center")),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             UserAccountsDrawerHeader(
               accountName: const Text("Code Diaries"),
-              accountEmail: const Text("codediraries@gmail.com"),
+              accountEmail: const Text("codediaries@gmail.com"),
               currentAccountPicture: ClipOval(
                 child: Image.asset("assets/images/logo.png"),
               ),
