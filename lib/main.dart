@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'design/drawer.dart';
+import 'design/snackbar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Animations',
-      home: DrawerView(),
+      home: SnackBarView(),
     );
   }
 }
