@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'design/fonts.dart';
 import 'design/snackbar.dart';
 
 void main() {
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Animations',
-      home: SnackBarView(),
+      home: FontView(),
     );
   }
 }
