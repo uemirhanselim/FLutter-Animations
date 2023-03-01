@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/design/orientation.dart';
 
 import 'navigateExample.dart';
 
@@ -12,9 +13,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Flutter Animations',
-      home: NavigationExampleView(),
+      home: OrientaitonView(),
     );
   }
 }
