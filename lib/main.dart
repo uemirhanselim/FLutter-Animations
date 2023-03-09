@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'design/tabs.dart';
+import 'effects/download_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Animations',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           textTheme: const TextTheme(
               headline4: TextStyle(fontWeight: FontWeight.bold))),
-      home: const TabsView(),
+      home: const ExampleCupertinoDownloadButton(),
     );
   }
 }
