@@ -18,7 +18,7 @@ class _ExampleCupertinoDownloadButtonState
   void initState() {
     super.initState();
     _downloadControllers = List<DownloadController>.generate(
-      20,
+      3,
       (index) => SimulatedDownloadController(onOpenDownload: () {
         _openDownload(index);
       }),
@@ -36,7 +36,7 @@ class _ExampleCupertinoDownloadButtonState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Apps')),
+      appBar: AppBar(title: const Text('Download Button Animation')),
       body: ListView.separated(
         itemCount: _downloadControllers.length,
         separatorBuilder: (_, __) => const Divider(),
@@ -49,63 +49,32 @@ class _ExampleCupertinoDownloadButtonState
     final theme = Theme.of(context);
     final downloadController = _downloadControllers[index];
 
-    return ListTile(
-      leading: const DemoAppIcon(),
-      title: Text(
-        'App ${index + 1}',
-        overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.titleLarge,
-      ),
-      subtitle: Text(
-        'Lorem ipsum dolor #${index + 1}',
-        overflow: TextOverflow.ellipsis,
-        style: theme.textTheme.bodySmall,
-      ),
-      trailing: SizedBox(
-        width: 96,
-        child: AnimatedBuilder(
-          animation: downloadController,
-          builder: (context, child) {
-            return DownloadButton(
-              status: downloadController.downloadStatus,
-              downloadProgress: downloadController.progress,
-              onDownload: downloadController.startDownload,
-              onCancel: downloadController.stopDownload,
-              onOpen: downloadController.openDownload,
-            );
-          },
+    return SizedBox(
+      width: 100,
+      child: ListTile(
+        title: Text(
+          'Item ${index + 1}',
+          overflow: TextOverflow.ellipsis,
+          style: theme.textTheme.titleLarge,
         ),
-      ),
-    );
-  }
-}
-
-@immutable
-class DemoAppIcon extends StatelessWidget {
-  const DemoAppIcon({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const AspectRatio(
-      aspectRatio: 1,
-      child: FittedBox(
-        child: SizedBox(
-          width: 80,
-          height: 80,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [Colors.red, Colors.blue],
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(20)),
-            ),
-            child: Center(
-              child: Icon(
-                Icons.ac_unit,
-                color: Colors.white,
-                size: 40,
-              ),
-            ),
+        subtitle: Text(
+          'Subscribe to Code Diaries #${index + 1}',
+          overflow: TextOverflow.ellipsis,
+          style: theme.textTheme.bodySmall,
+        ),
+        trailing: SizedBox(
+          width: 96,
+          child: AnimatedBuilder(
+            animation: downloadController,
+            builder: (context, child) {
+              return DownloadButton(
+                status: downloadController.downloadStatus,
+                downloadProgress: downloadController.progress,
+                onDownload: downloadController.startDownload,
+                onCancel: downloadController.stopDownload,
+                onOpen: downloadController.openDownload,
+              );
+            },
           ),
         ),
       ),
@@ -346,7 +315,7 @@ class ButtonShapeWidget extends StatelessWidget {
           opacity: isDownloading || isFetching ? 0.0 : 1.0,
           curve: Curves.ease,
           child: Text(
-            isDownloaded ? 'OPEN' : 'GET',
+            isDownloaded ? 'OPEN' : 'Download',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
