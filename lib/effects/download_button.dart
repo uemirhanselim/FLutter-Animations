@@ -36,7 +36,11 @@ class _ExampleCupertinoDownloadButtonState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Download Button Animation')),
+      backgroundColor: Colors.amberAccent.shade200,
+      appBar: AppBar(
+        title: const Text('Download Button Animation'),
+        backgroundColor: Colors.amberAccent.shade700,
+      ),
       body: ListView.separated(
         itemCount: _downloadControllers.length,
         separatorBuilder: (_, __) => const Divider(),
@@ -262,7 +266,7 @@ class DownloadButton extends StatelessWidget {
                     const Icon(
                       Icons.stop,
                       size: 14,
-                      color: CupertinoColors.activeBlue,
+                      color: Colors.purple,
                     ),
                 ],
               ),
@@ -319,7 +323,7 @@ class ButtonShapeWidget extends StatelessWidget {
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.labelLarge?.copyWith(
                   fontWeight: FontWeight.bold,
-                  color: CupertinoColors.activeBlue,
+                  color: Colors.purple,
                 ),
           ),
         ),
@@ -355,7 +359,7 @@ class ProgressIndicatorWidget extends StatelessWidget {
                 : Colors.white.withOpacity(0),
             valueColor: AlwaysStoppedAnimation(isFetching
                 ? CupertinoColors.lightBackgroundGray
-                : CupertinoColors.activeBlue),
+                : Colors.purple),
             strokeWidth: 2,
             value: isFetching ? null : progress,
           );
