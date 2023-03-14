@@ -139,11 +139,15 @@ class DownloadButtonWidget extends StatelessWidget {
                 children: [
                   ProgressIndicatorWidget(
                     donwloadProgress: donwloadProgress,
-                    isDonwloading: _isDownloading,
+                    isDownloading: _isDownloading,
                     isFetching: _isFetching,
                   ),
                   if (_isDownloading)
-                    const Icon(Icons.stop, size: 14, color: Colors.purple),
+                    const Icon(
+                      Icons.stop,
+                      size: 14,
+                      color: Colors.purple,
+                    )
                 ],
               ),
             ),
@@ -158,11 +162,11 @@ class ProgressIndicatorWidget extends StatelessWidget {
   const ProgressIndicatorWidget(
       {super.key,
       required this.donwloadProgress,
-      required this.isDonwloading,
+      required this.isDownloading,
       required this.isFetching});
 
   final double donwloadProgress;
-  final bool isDonwloading;
+  final bool isDownloading;
   final bool isFetching;
 
   @override
@@ -170,11 +174,11 @@ class ProgressIndicatorWidget extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1,
       child: TweenAnimationBuilder(
-        tween: Tween(begin: 0, end: donwloadProgress),
+        tween: Tween(begin: 0.0, end: donwloadProgress),
         duration: const Duration(milliseconds: 500),
         builder: (context, progress, child) {
           return CircularProgressIndicator(
-            backgroundColor: isDonwloading
+            backgroundColor: isDownloading
                 ? CupertinoColors.lightBackgroundGray
                 : Colors.white.withOpacity(0),
             valueColor: AlwaysStoppedAnimation(isFetching
@@ -224,14 +228,12 @@ class ButtonShapeWidget extends StatelessWidget {
           duration: transitionDuration,
           opacity: isDownloading || isFetching ? 0.0 : 1.0,
           curve: Curves.ease,
-          child: Text(
-            isDownloaded ? "Open" : "Download",
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.purple,
-                ),
-          ),
+          child: Text(isDownloaded ? "Open" : "Download",
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.purple,
+                  )),
         ),
       ),
     );
