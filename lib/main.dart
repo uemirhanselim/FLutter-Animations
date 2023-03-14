@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'effects/download_button.dart';
+import 'effects/download_button/download_button.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           textTheme: const TextTheme(
               headline4: TextStyle(fontWeight: FontWeight.bold))),
-      home: const ExampleCupertinoDownloadButton(),
+      home: const DownloadButton(),
     );
   }
 }
